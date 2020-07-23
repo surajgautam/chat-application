@@ -13,7 +13,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     /* there are three types of destinations.
     * 1) Application destinations - our controller
     * 2) Broker destination - directly to brokers like /topic/messages (rabbitmq)
-    * 3) User destination - directly to broker with session id */
+    * 3) User destination - directly to broker with session id if without authentication
+    * and username from principal object if authenticated */
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/initiate-connection")
